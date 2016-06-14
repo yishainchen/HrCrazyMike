@@ -15,6 +15,9 @@
 		708416701D057BAB0060F75F /* HrCrazyMikeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7084166F1D057BAB0060F75F /* HrCrazyMikeTests.m */; };
 		7084167B1D057BAB0060F75F /* HrCrazyMikeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7084167A1D057BAB0060F75F /* HrCrazyMikeUITests.m */; };
 		708416CF1D057C150060F75F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 708416CE1D057C150060F75F /* ViewController.m */; };
+		70B360E01D0FD79500DC1573 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B360DE1D0FD79500DC1573 /* Fabric.framework */; };
+		70B360E11D0FD79500DC1573 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B360DF1D0FD79500DC1573 /* Crashlytics.framework */; };
+		70D2428C1D0E5C3100B5FF4B /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D2428B1D0E5C3100B5FF4B /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,10 @@
 		7084167C1D057BAB0060F75F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		708416CD1D057C140060F75F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		708416CE1D057C150060F75F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		70B360DE1D0FD79500DC1573 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		70B360DF1D0FD79500DC1573 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		70D2428A1D0E5C3100B5FF4B /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		70D2428B1D0E5C3100B5FF4B /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70B360E11D0FD79500DC1573 /* Crashlytics.framework in Frameworks */,
+				70B360E01D0FD79500DC1573 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,11 +110,15 @@
 		7084164E1D057BAB0060F75F /* HrCrazyMike */ = {
 			isa = PBXGroup;
 			children = (
+				70B360DE1D0FD79500DC1573 /* Fabric.framework */,
+				70B360DF1D0FD79500DC1573 /* Crashlytics.framework */,
 				708416521D057BAB0060F75F /* AppDelegate.h */,
 				708416531D057BAB0060F75F /* AppDelegate.m */,
 				708416CD1D057C140060F75F /* ViewController.h */,
 				708416CE1D057C150060F75F /* ViewController.m */,
 				7084165E1D057BAB0060F75F /* Main.storyboard */,
+				70D2428A1D0E5C3100B5FF4B /* WebViewController.h */,
+				70D2428B1D0E5C3100B5FF4B /* WebViewController.m */,
 				708416611D057BAB0060F75F /* Assets.xcassets */,
 				708416631D057BAB0060F75F /* LaunchScreen.storyboard */,
 				708416661D057BAB0060F75F /* Info.plist */,
@@ -150,6 +163,7 @@
 				708416481D057BAB0060F75F /* Sources */,
 				708416491D057BAB0060F75F /* Frameworks */,
 				7084164A1D057BAB0060F75F /* Resources */,
+				70B360DD1D0FD72C00DC1573 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,7 +221,7 @@
 				TargetAttributes = {
 					7084164B1D057BAB0060F75F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 868RM2G63D;
+						DevelopmentTeam = X42PG9Q2G6;
 					};
 					7084166A1D057BAB0060F75F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -268,6 +282,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		70B360DD1D0FD72C00DC1573 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 412fa08015191a1c3a29df06d06ec807600a458b 41454832b3f1a3b97f8b6e1cd86447ab88bdb854031a3cf37760121532b44b6b";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		708416481D057BAB0060F75F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -276,6 +306,7 @@
 				708416CF1D057C150060F75F /* ViewController.m in Sources */,
 				708416541D057BAB0060F75F /* AppDelegate.m in Sources */,
 				708416511D057BAB0060F75F /* main.m in Sources */,
+				70D2428C1D0E5C3100B5FF4B /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,12 +451,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HrCrazyMike/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.crazymikehr.HrCrazyMike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cd0c490e-8877-4d2e-a901-5cc6f6eb5ca6";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -436,12 +472,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HrCrazyMike/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.crazymikehr.HrCrazyMike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cd0c490e-8877-4d2e-a901-5cc6f6eb5ca6";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

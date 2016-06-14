@@ -34,14 +34,17 @@
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:_request delegate:self];
     [connection start];
     
-    indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
-    indicator.center = self.view.center;
-    [self.view addSubview:indicator];
-    [indicator bringSubviewToFront:self.view];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
+    if (!indicator) {
+        
+        indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+        indicator.center = self.view.center;
+        [self.view addSubview:indicator];
+        [indicator bringSubviewToFront:self.view];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
+    }
     
-    [indicator startAnimating];
+    
     
 }
 
@@ -75,17 +78,23 @@
 
 }
 
+-(void)webViewDidStartLoad:(UIWebView *)webView {
+    NSLog(@"start");
+    [indicator startAnimating];
+}
+
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     NSLog(@"Current URL = %@",webView.request.URL);
-    [indicator stopAnimating];
+    [indicator removeFromSuperview];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     //Check if the web view loadRequest is sending an error message
     NSLog(@"Error : %@",error);
-    [indicator stopAnimating];
+    [indicator removeFromSuperview];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"無法連線" message:@"請確認是否已連結至公司wify" preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
