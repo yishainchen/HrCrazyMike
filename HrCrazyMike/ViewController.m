@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <Crashlytics/Crashlytics.h>
+
 
 @interface ViewController () <NSURLConnectionDelegate>
 {
@@ -24,9 +26,7 @@
     [super viewDidLoad];
     
     _webView.delegate = self;
-//    self.refreshButton.layer.cornerRadius = 4.5;
-    
-    
+
     NSURL *targetURL = [NSURL URLWithString:@"https://hr.crazymike.com.tw"];
     _request = [NSURLRequest requestWithURL:targetURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
     [self.webView loadRequest:_request]; //  self.webView替换成自己的webview
@@ -35,7 +35,6 @@
     [connection start];
     
     if (!indicator) {
-        
         indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
         indicator.center = self.view.center;
@@ -43,12 +42,7 @@
         [indicator bringSubviewToFront:self.view];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
     }
-    
-    
-    
 }
-
-
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
@@ -87,14 +81,14 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     NSLog(@"Current URL = %@",webView.request.URL);
-    [indicator removeFromSuperview];
+    [indicator stopAnimating];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     //Check if the web view loadRequest is sending an error message
     NSLog(@"Error : %@",error);
-    [indicator removeFromSuperview];
+    [indicator stopAnimating];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"無法連線" message:@"請確認是否已連結至公司wify" preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
