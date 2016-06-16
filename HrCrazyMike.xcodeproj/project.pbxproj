@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7084164C1D057BAB0060F75F /* HrCrazyMike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HrCrazyMike.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7084164C1D057BAB0060F75F /* B1-EIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "B1-EIP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		708416501D057BAB0060F75F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		708416521D057BAB0060F75F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		708416531D057BAB0060F75F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		7084164D1D057BAB0060F75F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7084164C1D057BAB0060F75F /* HrCrazyMike.app */,
+				7084164C1D057BAB0060F75F /* B1-EIP.app */,
 				7084166B1D057BAB0060F75F /* HrCrazyMikeTests.xctest */,
 				708416761D057BAB0060F75F /* HrCrazyMikeUITests.xctest */,
 			);
@@ -171,7 +171,7 @@
 			);
 			name = HrCrazyMike;
 			productName = HrCrazyMike;
-			productReference = 7084164C1D057BAB0060F75F /* HrCrazyMike.app */;
+			productReference = 7084164C1D057BAB0060F75F /* B1-EIP.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7084166A1D057BAB0060F75F /* HrCrazyMikeTests */ = {
@@ -460,7 +460,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.crazymikehr.HrCrazyMike;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "B1-EIP";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -480,7 +480,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.crazymikehr.HrCrazyMike;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "B1-EIP";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

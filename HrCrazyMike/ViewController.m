@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     _webView.delegate = self;
-
+ 
     NSURL *targetURL = [NSURL URLWithString:@"https://hr.crazymike.com.tw"];
     _request = [NSURLRequest requestWithURL:targetURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
     [self.webView loadRequest:_request]; //  self.webView替换成自己的webview

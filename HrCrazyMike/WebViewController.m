@@ -23,11 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    https://crazymike.tw/widget.asp?xml=y&site=facebook2&channel=5&page=1
     // Do any additional setup after loading the view.
     
     self.testWebView.delegate = self;
     
-    NSURL *targetURL = [NSURL URLWithString:@"https://crazymike.tw/?gid=a33e5ac1446cf6706b56178ae066468d&partner=oeya"];
+    NSURL *targetURL = [NSURL URLWithString:@"https://crazymike.tw/widget.asp?xml=y&site=facebook2&channel=5&page=1"];
     _request = [NSURLRequest requestWithURL:targetURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
     [self.testWebView loadRequest:_request];
 }
